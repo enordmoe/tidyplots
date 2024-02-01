@@ -1,0 +1,115 @@
+# Tidyplots Lab
+all participating group member names here
+2024-02-01
+
+**1. Energy Consumption** This problem deals with a dataset containing
+information on hourly energy consumption data from several electric
+utilities that are part of the Eastern Interconnection grid in the US.
+The data are in the file “electric_use.csv”. This dataset was created
+from data in the Hourly Energy Consumption Data on Kaggle
+(https://www.kaggle.com/robikscube/hourly-energy-consumption/home).
+(Thanks to Sam Maddux for finding this data source for his
+Dataset-of-the-Day).
+
+Write a code chunk that does the following:
+
+- Reads the data set into a tibble called **electric**.
+
+- The data set as provided is not “tidy”. Use appropriate functions from
+  this section to make it a tidy data set called **tidy_electric**.
+
+- Constructs a scatterplot with a line plot overlaid showing hourly
+  consumption data over the entire time period comparing the three
+  utilities represented in the data.
+
+  - The points should have different shapes for each utility.
+
+  - Each line for each utility should be a different color.
+
+  - All lines should have a width half as large as the default.
+
+  - The plot should have a single legend.
+
+**2. Calc Enrollments** The next task is to read and tidy the data file
+“calc_enrollments.csv” which contains enrollment in Calculus sections at
+K over the course of a decade. I was provided this data in an Excel
+format but have saved them in CSV form for your use.
+
+**a.** Write a code chunk that does the following:
+
+- Reads the data set into a tibble called **enrollments**.
+
+- The data set as provided is not “tidy”. Uses appropriate functions
+  from this section to make it a tidy data set called
+  **tidy_enrollments**. Use appropriate arguments to these functions so
+  that there are no NA values and all columns have the correct types.
+
+- Constructs a point plot of class sizes (y) by year (x) using a
+  different color for each Class (e.g., Calc I, Calc II, …) and dodging
+  the points so that they don’t overlap (that is, for each year, there
+  should be 3 vertical strips of points close together, one for each
+  “Class”. Add a single smoothing line that shows the trend in class
+  sizes over all Classes. An example is provided below.
+
+![Figure 1: Enrollments Plot](figures/enrollments_plot_example.png)
+
+**Answer:**
+
+**b.** In Section 9.5, the text provides this example of how to use a
+statistical transformation in a graph for the Diamonds data:
+
+``` r
+ggplot(data = diamonds) + 
+  stat_summary(
+    mapping = aes(x = cut, y = depth),
+    fun.min = min,
+    fun.max = max,
+    fun = median
+  )
+```
+
+Use this template to show the median and range of enrollments in
+calculus sections over time.
+
+**Answer:**
+
+**c.** Create a bar chart with one bar for each year showing the median
+enrollment per section across all sections of Calc I, II, and III for
+that year. The number of bars should be equal to the number of years
+represented in the data. Just so the plot doesn’t look too dull, each
+bar should have a different color and be sure that the bars should be
+distinguished by someone who is color blind.
+
+**3.** The dataset `anorexia_data.txt` contains data from a randomized
+experiment carried out to assess the comparative effectiveness of three
+treatments for anorexia. Details are provided inside the data file.
+(Source: *A Handbook of Small Data Sets*, Volume 1, by David J. Hand,
+Fergus Daly, K. McConway, D. Lunn, E. Ostrowski.). The data are
+formatted exactly as I encountered them.
+
+a\. Write a code chunk that inputs the data and creates a tidy data set
+called `anorexia_tidy` that matches the data set shown in the
+`glimpse()` output below. Here are a few considerations:
+
+- Inspect the data to determine which `read_xyz()` command will be most
+  useful for reading the file.
+
+- Import and tidy the data so that each case is an individual girl. Your
+  dataset should have 72 observations and there should be no NA values
+  remaining after the tidying process.
+
+- Use `control`, `cogbehav`, and `family` for the `group` names.
+
+- Calculate two new variables for weight gain as shown in the figure
+  below: one with the actual weight gain (`gain`) and the other
+  (`gained`) that is `TRUE` if the girl gained weight and `FALSE` if her
+  weight stayed the same or decreased.
+
+![Figure 2: Tidy Anorexia Data](figures/anorexia_tidy.png)
+
+**Answer:**
+
+b\. Create a boxplot that compares the weight gains of the three
+experimental groups
+
+**Answer:**
