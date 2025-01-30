@@ -25,7 +25,7 @@ Write a code chunk that does the following:
 
 -   Reads the data set into a tibble called **electric**.
 
--   The data set as provided is not "tidy". Use appropriate functions from this section to make it a tidy data set called **tidy_electric**.
+-   The data set as provided is not "tidy". Use appropriate functions from this section to make  a tidy data set called **tidy_electric**.
 
 -   Constructs a scatterplot with a line plot overlaid showing hourly consumption data over the entire time period comparing the three utilities represented in the data.
 
@@ -33,9 +33,11 @@ Write a code chunk that does the following:
 
     -   Each line for each utility should be a different color.
 
-    -   All lines should have a width half as large as the default.
+    -   All lines should have a width half as large as the default and be of different styles.
 
     -   The plot should have a single legend.
+    
+    -   The axes should be labeled and the plot should be titled.
 
 ```{r}
 
@@ -89,7 +91,7 @@ Use this template to show the median and range of enrollments in calculus sectio
 
 a\. Write a code chunk that inputs the data and creates a tidy data set called `anorexia_tidy` that matches the data set shown in the `glimpse()` output below. Here are a few considerations:
 
--   Inspect the data to determine which `read_xyz()` command will be most useful for reading the file.
+-   Inspect the data to determine which `read_()` command will be most useful for reading the file.
 
 -   Import and tidy the data so that each case is an individual girl. Your dataset should have 72 observations and there should be no NA values remaining after the tidying process.
 
